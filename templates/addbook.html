@@ -198,15 +198,27 @@ label
 </ul>
 <div class="bg-img">
 <div class="form-box">
-  <header style="font-weight: bold; margin-top: -50%; margin-bottom: 5%;">ADD NEW AUTHOR HERE</header>
+  <header style="font-weight: bold; margin-top: -60%; margin-bottom: 5%;">ADD NEW BOOK HERE</header>
 <div class="wrapper">
-<form action="/AddAuthorSubmission/" method="post">
+<form action="/AddBookSubmission/" method="post">
 {% csrf_token %}
-<label for="author_id">AUTHOR ID:</label>
-<input type="text" name="author_id" class="form-control" id="author_id" required/>
+<label for="isbn">ISBN: </label>
+<input type="text" name="isbn" class="form-control" id="isbn" required/>
 <br>
-<label for="name">AUTHOR NAME:</label>
-<input type="text" name="name" class="form-control" id="name" required/>
+<label for="title">TITLE:</label>
+<input type="text" name="title" class="form-control" id="title" required/>
+<br>
+<label for="author">AUTHOR:</label>
+<input type="text" name="author" class="form-control" id="author" required/>
+<br>
+<label for="category">CATEGORY:</label>
+<input type="text" name="category" class="form-control" id="category" required/>
+<br>
+<label for="publisher">PUBLISHER:</label>
+<input type="text" name="publisher" class="form-control" id="publisher" required/>
+<br>
+<label for="status">STATUS(Issued/Not-Issued):</label>
+<input type="text" name="status" class="form-control" id="status" required/>
 <button type="submit">SUBMIT</button>
 </form>
 </div>

@@ -198,15 +198,12 @@ label
 </ul>
 <div class="bg-img">
 <div class="form-box">
-  <header style="font-weight: bold; margin-top: -50%; margin-bottom: 5%;">ADD NEW AUTHOR HERE</header>
+  <header style="font-weight: bold; margin-top: -50%; margin-bottom: 5%;">ADD NEW BOOK TYPE HERE</header>
 <div class="wrapper">
-<form action="/AddAuthorSubmission/" method="post">
+<form action="/AddCategorySubmission/" method="post">
 {% csrf_token %}
-<label for="author_id">AUTHOR ID:</label>
-<input type="text" name="author_id" class="form-control" id="author_id" required/>
-<br>
-<label for="name">AUTHOR NAME:</label>
-<input type="text" name="name" class="form-control" id="name" required/>
+<label for="type">BOOK CATEGORY: </label>
+<input type="text" name="type" class="form-control" id="type" required/>
 <button type="submit">SUBMIT</button>
 </form>
 </div>

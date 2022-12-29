@@ -9,17 +9,6 @@
     body{
     font-family:'Roboto','sans-serif';
 }
-body::after {
-  background: url("../static/img/books.jpg");
-  content: "";
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: -1;   
-}
 *{
     margin:0;
     padding:0;
@@ -112,7 +101,7 @@ ul li:hover a{
 }
 
 .topnav .search-container button:hover {
-  background: #ccc;
+  background: red;
 }
 
 /* Add responsiveness - On small screens, display the navbar vertically instead of horizontally */
@@ -166,6 +155,17 @@ body{
   background-attachment: fixed;
   background-size: 100% 100%;
 }
+body::after {
+  background: url("../static/img/reading.jpg");
+  content: "";
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;   
+}
 .form-box form label{
  font-family: Georgia, "Times New Roman", Times, serif;
  font-size: 20px;
@@ -179,6 +179,7 @@ label
 }
 
 </style>
+
 </head>
 <body>
 <div class="sidebar">
@@ -198,15 +199,16 @@ label
 </ul>
 <div class="bg-img">
 <div class="form-box">
-  <header style="font-weight: bold; margin-top: -50%; margin-bottom: 5%;">ADD NEW AUTHOR HERE</header>
+  <header style="font-weight: bold; margin-top: -60%; margin-bottom: 5%;">RETURN BOOK</header>
 <div class="wrapper">
-<form action="/AddAuthorSubmission/" method="post">
+<form action="/returnbooksubmission/" method="post">
 {% csrf_token %}
-<label for="author_id">AUTHOR ID:</label>
-<input type="text" name="author_id" class="form-control" id="author_id" required/>
+<label for="isbn">BOOK ISBN:</label>
+<input type="text" name="isbn" class="form-control" id="isbn" required/>
 <br>
-<label for="name">AUTHOR NAME:</label>
-<input type="text" name="name" class="form-control" id="name" required/>
+<label for="member_id">MEMBER ID:</label>
+<input type="text" name="member_id" class="form-control" id="member_id" required/>
+<br>
 <button type="submit">SUBMIT</button>
 </form>
 </div>

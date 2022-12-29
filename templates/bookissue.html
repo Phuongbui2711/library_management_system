@@ -9,17 +9,6 @@
     body{
     font-family:'Roboto','sans-serif';
 }
-body::after {
-  background: url("../static/img/books.jpg");
-  content: "";
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: -1;   
-}
 *{
     margin:0;
     padding:0;
@@ -166,6 +155,17 @@ body{
   background-attachment: fixed;
   background-size: 100% 100%;
 }
+body::after {
+  background: url("../static/img/reading.jpg");
+  content: "";
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;   
+}
 .form-box form label{
  font-family: Georgia, "Times New Roman", Times, serif;
  font-size: 20px;
@@ -177,37 +177,38 @@ label
 {
   font-weight: bold;
 }
-
 </style>
 </head>
 <body>
+</div>
 <div class="sidebar">
 <header style="font-weight: bold;">TINY LIBRARY</header>
 <ul>
-<li><a href="/dashboard/"><i class="fas fa-qrcode"></i>Dashboard</a></li>
-<li><a href="/addbook/"><i class="fas fa-book"></i>Add Book</a></li>
+<li><a href="/dashboard/"><i class="fas fa-qrcode"></i> Dashboard</a></li>
+<li><a href="/addbook/"><i class="fas fa-book"></i> Add Book</a></li>
 <li><a href="/addauthor/"><i class="fas fa-book"></i>Add Author</a></li>
 <li><a href="/addcategory/"><i class="fas fa-book"></i>Add Category</a></li>
 <li><a href="/addpublisher/"><i class="fas fa-book"></i>Add Publisher</a></li>
-<li><a href="/addstudent/"><i class="fa fa-user"></i>Add Member</a></li>
-<li><a href="/bookissue/"><i class="fas fa-paperclip"></i>Issue Book</a></li>
-<li><a href="/viewissuedbook/"><i class="fa fa-user"></i>View Issued Book</a></li>
-<li><a href="/viewstudents/"><i class="fas fa-paperclip"></i>View Member</a></li>
-<li><a href="/returnbook/"><i class="fas fa-exchange-alt"></i>Return Book</a></li>
-<li><a href="/HandleLogout/"><i class="fa fa-user"></i>Log Out</a></li>
+<li><a href="/addstudent/"><i class="fa fa-user"></i> Add Member</a></li>
+<li><a href="/bookissue/"><i class="fas fa-paperclip"></i> Issue Book</a></li>
+<li><a href="/viewissuedbook/"><i class="fa fa-user"></i> View Issued Book</a></li>
+<li><a href="/viewstudents/"><i class="fas fa-paperclip"></i> View Member</a></li>
+<li><a href="/returnbook/"><i class="fas fa-exchange-alt"></i> Return Book</a></li>
+<li><a href="/HandleLogout/"><i class="fa fa-user"></i> Log Out</a></li>
 </ul>
 <div class="bg-img">
 <div class="form-box">
-  <header style="font-weight: bold; margin-top: -50%; margin-bottom: 5%;">ADD NEW AUTHOR HERE</header>
+  <header style="font-weight: bold; margin-top: -60%; margin-bottom: 5%;">ISSUE BOOK HERE</header>
 <div class="wrapper">
-<form action="/AddAuthorSubmission/" method="post">
+<form action="/issuebooksubmission/" method="post">
 {% csrf_token %}
-<label for="author_id">AUTHOR ID:</label>
-<input type="text" name="author_id" class="form-control" id="author_id" required/>
+<label for="isbn">Book ISBN:</label>
+<input type="text" name="isbn" class="form-control" id="isbn" required/>
 <br>
-<label for="name">AUTHOR NAME:</label>
-<input type="text" name="name" class="form-control" id="name" required/>
-<button type="submit">SUBMIT</button>
+<label for="member_id">Member ID:</label>
+<input type="text" name="member_id" class="form-control" id="member_id" required/>
+<br>
+<button type="submit">Submit</button>
 </form>
 </div>
 </div>

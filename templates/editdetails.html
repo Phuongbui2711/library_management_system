@@ -9,17 +9,6 @@
     body{
     font-family:'Roboto','sans-serif';
 }
-body::after {
-  background: url("../static/img/books.jpg");
-  content: "";
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: -1;   
-}
 *{
     margin:0;
     padding:0;
@@ -138,30 +127,29 @@ ul li:hover a{
 .form-box {
   position:relative; 
   left:500px; 
-  top:-580px;
+  top:-600px;
   margin-top:70px;
-  width: 150%;
 }
 .form-box form input{
   width:100%;
-  height:50px;
+  height:30px;
   margin-bottom:10px;
   border: 1px solid #000;
   margin-top: 10px;
   margin-right:10px;
 }
 .form-box form button{
-  width:100px;
-  height:50px;
-  border:#000;
-  background-color:rgb(50, 50, 108);
-  font-size:20px;
+  width:80px;
+  height:30px;
+  border:none;
+  background-color:blue;
+  font-size:16px;
   color:#fff;
   font-family:Lato;
   margin-left:340px;
-  font-weight: bold;
 }
 body{
+  background-image: url("../static/img/books.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -173,16 +161,12 @@ body{
  height: 40px;
  clear: both;
 }
-label
-{
-  font-weight: bold;
-}
 
 </style>
 </head>
 <body>
 <div class="sidebar">
-<header style="font-weight: bold;">TINY LIBRARY</header>
+<header>TINY LIBRARY</header>
 <ul>
 <li><a href="/dashboard/"><i class="fas fa-qrcode"></i>Dashboard</a></li>
 <li><a href="/addbook/"><i class="fas fa-book"></i>Add Book</a></li>
@@ -198,16 +182,27 @@ label
 </ul>
 <div class="bg-img">
 <div class="form-box">
-  <header style="font-weight: bold; margin-top: -50%; margin-bottom: 5%;">ADD NEW AUTHOR HERE</header>
 <div class="wrapper">
-<form action="/AddAuthorSubmission/" method="post">
+<form action="{% url 'updatedetails' Book.id %}" method="post">
 {% csrf_token %}
-<label for="author_id">AUTHOR ID:</label>
-<input type="text" name="author_id" class="form-control" id="author_id" required/>
+<label for="isbn">ISBN:</label>
+<input type="text" name="isbn" class="form-control" id="isbn"  value={{Book.isbn}}>
 <br>
-<label for="name">AUTHOR NAME:</label>
-<input type="text" name="name" class="form-control" id="name" required/>
-<button type="submit">SUBMIT</button>
+<label for="title">Title:</label>
+<input type="text" name="title" class="form-control" id="title"  value={{Book.title}}>
+<br>
+<label for="author">Author:</label>
+<input type="text" name="author" class="form-control" id="author" value={{Book.author}}>
+<br>
+<label for="category">Category:</label>
+<input type="text" name="category" class="form-control" id="category" value={{Book.category}}/>
+<br>
+<label for="publisher">Publisher:</label>
+<input type="text" name="publisher" class="form-control" id="publisher" value={{Book.publisher}}>
+<br>
+<label for="status">Status(Issued/Not-Issued):</label>
+<input type="text" name="status" class="form-control" id="status" value={{Book.status}}>
+<button type="submit">Submit</button>
 </form>
 </div>
 </div>

@@ -182,7 +182,7 @@ label
 </head>
 <body>
 <div class="sidebar">
-<header style="font-weight: bold;">TINY LIBRARY</header>
+<header>TINY LIBRARY</header>
 <ul>
 <li><a href="/dashboard/"><i class="fas fa-qrcode"></i>Dashboard</a></li>
 <li><a href="/addbook/"><i class="fas fa-book"></i>Add Book</a></li>
@@ -198,14 +198,11 @@ label
 </ul>
 <div class="bg-img">
 <div class="form-box">
-  <header style="font-weight: bold; margin-top: -50%; margin-bottom: 5%;">ADD NEW AUTHOR HERE</header>
+  <header style="font-weight: bold; margin-top: -50%; margin-bottom: 5%;">ADD NEW PUBLISHER HERE</header>
 <div class="wrapper">
-<form action="/AddAuthorSubmission/" method="post">
+<form action="/AddPublisherSubmission/" method="post">
 {% csrf_token %}
-<label for="author_id">AUTHOR ID:</label>
-<input type="text" name="author_id" class="form-control" id="author_id" required/>
-<br>
-<label for="name">AUTHOR NAME:</label>
+<label for="name">PUBLISHER NAME:</label>
 <input type="text" name="name" class="form-control" id="name" required/>
 <button type="submit">SUBMIT</button>
 </form>
