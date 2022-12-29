@@ -82,4 +82,4 @@ Return books
 ![return](static/img/testing/return.jpg)
 
 #### Reference:
-Part of the project code is consulted from the TechVidvanLibrary project. Refer to: https://techvidvan.com/tutorials/python-library-management-system/ 
+<p>Part of the project code is consulted from the TechVidvanLibrary project. Refer to: https://techvidvan.com/tutorials/python-library-management-system/ </p>
